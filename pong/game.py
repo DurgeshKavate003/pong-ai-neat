@@ -21,10 +21,10 @@ class Game:
     Use the information returned from .loop() to determine when to end the game by calling
     .reset().
     """
-    SCORE_FONT = pygame.font.SysFont("comicsans", 50)
+    SCORE_FONT = pygame.font.SysFont("Copperplate Gothic", 45)
     WHITE = (255, 255, 255)
     BLACK = (0, 0, 0)
-    RED = (255, 0, 0)
+    DRAW_HITS_SCORE_COLOR = (0, 0, 200)
 
     def __init__(self, window, window_width, window_height):
         self.window_width = window_width
@@ -54,7 +54,7 @@ class Game:
 
     def _draw_hits(self):
         hits_text = self.SCORE_FONT.render(
-            f"{self.left_hits + self.right_hits}", 1, self.RED)
+            f"{self.left_hits + self.right_hits}", 1, self.DRAW_HITS_SCORE_COLOR)
         self.window.blit(hits_text, (self.window_width //
                                      2 - hits_text.get_width()//2, 10))
 
